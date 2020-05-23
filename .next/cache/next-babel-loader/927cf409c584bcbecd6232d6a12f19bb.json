@@ -1,0 +1,1 @@
+{"ast":null,"code":"import React from 'react';\nimport 'isomorphic-fetch';","map":{"version":3,"sources":["C:/Users/marce/Desktop/nextjs-movies/pages/index.js"],"names":["React"],"mappings":"AAAA,OAAOA,KAAP,MAAkB,OAAlB;AACA,OAAO,kBAAP","sourcesContent":["import React from 'react';\r\nimport 'isomorphic-fetch';\r\n"]},"metadata":{},"sourceType":"module"}
