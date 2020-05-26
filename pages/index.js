@@ -1,16 +1,55 @@
 import React from 'react';
 // import "isomorphic-fetch";
 
-const Home  = () =><h1>hello world</h1>;
-
+const Home  = ({quotes}) => (
+   
+<div id="container">
+    <h1>Random Quotes From breaking Bad</h1>
+    <img src='/breaking-bad.jpg'/>
+{quotes.map(e => (
+  <div id="quotes">  
+<p>Quote :{e.quote}</p>
+<p>Author : {e.author}</p>
+</div>
+))}
+<style>  {
+`p , h1{
+    color:white;
+    }
+    
+  #quotes{
+      width:100%;
+      height:100%;
+  }  
+  
+  *{
+      background:black;
+      width:100%;
+      margin:0
+  }
+  #container{
+      display:flex;
+      text-align:center;
+      flex-direction:column;
+  }
+  img{
+      width:100%;
+      height:600px;
+  }`
+ 
+} 
+   
+</style>
+</div>
+);
 Home.getInitialProps = async () => {
-    const response = await fetch('https://ghibliapi.herokuapp.com/films');
-    const movies = await response.json();
-
-    console.log(movies.length);
-
-    return{};
+    const response = await fetch('https://breaking-bad-quotes.herokuapp.com/v1/quotes');
+    const quotes = await response.json();
+    
+    return{quotes};
+    
 };
+
 
 
 export default Home
