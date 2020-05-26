@@ -5,7 +5,7 @@ const Home  = ({quotes}) => (
    
 <div id="container">
     <h1>Random Quotes From breaking Bad</h1>
-    <img src='/breaking-bad.jpg'/>
+    <img src='/breaking-bad.jpg' alt="imagen de breaking bad con walter white y jesse pinkman"/>
 {quotes.map(e => (
   <div id="quotes">  
 <p>Quote :{e.quote}</p>
