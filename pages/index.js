@@ -7,20 +7,34 @@ const Home  = ({quotes}) => (
     <h1>Random Quotes From breaking Bad</h1>
     <img src='/breaking-bad.jpg' alt="imagen de breaking bad con walter white y jesse pinkman"/>
 {quotes.map(e => (
-  <div id="quotes">  
-<p>Quote :{e.quote}</p>
+  <div className="quotes">  
+<p>Quote : {e.quote}</p>
 <p>Author : {e.author}</p>
 </div>
 ))}
 <style>  {
-`p , h1{
+`p {
+    font-size:22px;
     color:white;
+    text-transform: uppercase;
+    padding:3%;
     }
-    
-  #quotes{
-      width:100%;
-      height:100%;
-  }  
+    h1{
+        padding-top:2%;
+        padding-bottom:2%;
+        color:white;
+    }
+  .quotes{
+      width:700px;
+      heigth:100%;
+      position:absolute;
+      opacity:0.7;
+      background:rgba(255,255,255,.2);
+      top:70vh;
+      left:50vh;
+      text-align:justify;
+      
+  }
   
   *{
       background:black;
@@ -31,10 +45,15 @@ const Home  = ({quotes}) => (
       display:flex;
       text-align:center;
       flex-direction:column;
+      postion:relative;
+     
+    
   }
   img{
       width:100%;
       height:600px;
+      
+      
   }`
  
 } 
