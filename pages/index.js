@@ -9,7 +9,7 @@ const Home  = ({quotes}) => (
         <title>Breaking bad random quote</title>
         <meta name="description" content="principal page"/>
     </Head>
-    <h1>Random Quotes From Breaking Bad</h1>
+    <h1>Random Quote From Breaking Bad</h1>
     <img src='/breaking-bad.jpg' alt="breaking bad image with walter white and jesse pinkman"/>
 {quotes.map(e => (
   <div className="quotes" key={e.author}>  
