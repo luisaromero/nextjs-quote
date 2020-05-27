@@ -1,18 +1,24 @@
 import React from 'react';
-// import "isomorphic-fetch";
+import "isomorphic-fetch";
+import Head from 'next/head';
 
 const Home  = ({quotes}) => (
    
-<div id="container">
-    <h1>Random Quotes From breaking Bad</h1>
-    <img src='/breaking-bad.jpg' alt="imagen de breaking bad con walter white y jesse pinkman"/>
+<main>
+    <Head>
+        <title>Breaking bad random quote</title>
+        <meta name="description" content="principal page"/>
+    </Head>
+    <h1>Random Quotes From Breaking Bad</h1>
+    <img src='/breaking-bad.jpg' alt="breaking bad image with walter white and jesse pinkman"/>
 {quotes.map(e => (
-  <div className="quotes">  
-<p>Quote : {e.quote}</p>
-<p>Author : {e.author}</p>
+  <div className="quotes" key={e.author}>  
+  
+<p >Quote : {e.quote}</p>
+<p >Author : {e.author}</p>
 </div>
 ))}
-<style>  {
+<style global jsx>  {
 `p {
     font-size:22px;
     color:white;
@@ -20,46 +26,50 @@ const Home  = ({quotes}) => (
     padding:3%;
     }
     h1{
-        padding-top:2%;
-        padding-bottom:2%;
+        padding-top:0.5%;
+        padding-bottom:0.5%;
         color:white;
     }
   .quotes{
       width:700px;
       heigth:100%;
       position:absolute;
-      opacity:0.7;
       background:rgba(255,255,255,.2);
-      top:70vh;
+      opacity:0.9;
+      top:60vh;
       left:50vh;
       text-align:justify;
+      color:white;
       
   }
   
-  *{
-      background:black;
+  body{
+     
       width:100%;
-      margin:0
+      margin: 0 auto;
+      padding:0 auto;
   }
-  #container{
+  main{
       display:flex;
       text-align:center;
       flex-direction:column;
       postion:relative;
+      background:black;
+      width:100%;
+      heigth:100%;
      
     
   }
   img{
       width:100%;
-      height:600px;
-      
+      height:600px;      
       
   }`
  
 } 
    
 </style>
-</div>
+</main>
 );
 Home.getInitialProps = async () => {
     const response = await fetch('https://breaking-bad-quotes.herokuapp.com/v1/quotes');
