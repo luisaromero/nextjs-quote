@@ -20,31 +20,27 @@ const Home  = ({quotes}) => (
 ))}
 <style global jsx>  {
 `p {
-    font-size:22px;
+    font-size:20px;
     color:white;
     text-transform: uppercase;
     padding:3%;
     }
     h1{
-        padding-top:0.5%;
-        padding-bottom:0.5%;
+        padding:1%;
         color:white;
     }
   .quotes{
-      width:700px;
-      heigth:100%;
+     width:60%;
+      heigth:70%;
       position:absolute;
       background:rgba(255,255,255,.2);
-      opacity:0.9;
-      top:60vh;
-      left:50vh;
+      opacity:0.8;
       text-align:justify;
       color:white;
       
   }
   
   body{
-     
       width:100%;
       margin: 0 auto;
       padding:0 auto;
@@ -57,14 +53,17 @@ const Home  = ({quotes}) => (
       background:black;
       width:100%;
       heigth:100%;
+      justify-content:center;
+      align-items:center;
      
     
   }
   img{
       width:100%;
-      height:600px;      
-      
-  }`
+      height:100vh;    
+  }
+  
+  `
  
 } 
    
